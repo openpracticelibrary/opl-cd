@@ -18,7 +18,8 @@ For local running and experimentation run `docker run -i -t jenkins-slave-npm /b
 oc process -f ../jenkins-slave-generic-template.yml \
     -p NAME=jenkins-slave-npm \
     -p SOURCE_CONTEXT_DIR=jenkins-workers/jenkins-slave-npm \
-    -p DOCKERFILE_PATH=Dockerfile.rhel7 \
+    -p DOCKERFILE_PATH=Dockerfile \
+    -p BUILDER_IMAGE_NAME=openshift/jenkins-slave-base-centos7:v4.3 \
     | oc apply -f -
 ```
 For all params see the list in the `../../.openshift/templates/jenkins-slave-generic-template.yml` or run `oc process --parameters -f ../../.openshift/templates/jenkins-slave-generic-template.yml`.
