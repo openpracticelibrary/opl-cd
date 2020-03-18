@@ -1,0 +1,23 @@
+# Default values for jenkins.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+appName: "jenkins"
+
+persistence:
+  enabled: true 
+  accessMode: "ReadWriteOnce"
+  volumeCapacity: "5Gi"
+
+auth:
+  enabled: true
+
+deployment:
+  disableAdminMonitors: false
+  enableFatalLog: false
+  insecureUC: false
+  trustCerts: true
+  memLimit: 1Gi
+  imageStream:
+    name: "jenkins:2"
+    namespace: "openshift"

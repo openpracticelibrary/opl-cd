@@ -1,0 +1,9 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: opl-operators
+  namespace: opl-ci-cd
+spec:
+  targetNamespaces:
+    - opl-ci-cd
+    - opl-dev
