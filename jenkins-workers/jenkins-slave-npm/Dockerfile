@@ -1,5 +1,5 @@
 #invoke npm in jenkinsfile: sh "scl enable rh-nodejs6 'npm run build'"
-FROM openshift/origin-jenkins-agent-base:4.3
+FROM quay.io/openshift/origin-jenkins-agent-base:4.3
 
 ENV NODEJS_VERSION=10 \
     NPM_CONFIG_PREFIX=$HOME/.npm-global \
