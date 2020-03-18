@@ -4,7 +4,7 @@ This slave extends the base jenkins slave image and adds the helm binary. We can
 
 ## Build in OpenShift
 ```shell
-oc process -f ../../.openshift/templates/jenkins-slave-generic-template.yml \
+oc process -f ../jenkins-slave-generic-template.yml \
     -p NAME=jenkins-slave-helm \
     -p SOURCE_CONTEXT_DIR=jenkins-workers/jenkins-slave-helm \
     -p DOCKERFILE_PATH=Dockerfile \

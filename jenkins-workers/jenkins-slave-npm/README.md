@@ -15,10 +15,10 @@ For local running and experimentation run `docker run -i -t jenkins-slave-npm /b
 
 ## Build in OpenShift
 ```shell
-oc process -f ../../.openshift/templates/jenkins-slave-generic-template.yml \
+oc process -f ../jenkins-slave-generic-template.yml \
     -p NAME=jenkins-slave-npm \
     -p SOURCE_CONTEXT_DIR=jenkins-workers/jenkins-slave-npm \
-    -p DOCKERFILE=Dockerfile.rhel7 \
+    -p DOCKERFILE_PATH=Dockerfile.rhel7 \
     | oc apply -f -
 ```
 For all params see the list in the `../../.openshift/templates/jenkins-slave-generic-template.yml` or run `oc process --parameters -f ../../.openshift/templates/jenkins-slave-generic-template.yml`.
@@ -27,7 +27,7 @@ For all params see the list in the `../../.openshift/templates/jenkins-slave-gen
 Add a new Kubernetes Container template called `jenkins-slave-npm` (if you've build and pushed the container image locally) and specify this as the node when running builds. If you're using the template attached; the `role: jenkins-slave` is attached and Jenkins should automatically discover the slave for you. Further instructions can be found [here](https://docs.openshift.com/container-platform/3.7/using_images/other_images/jenkins.html#using-the-jenkins-kubernetes-plug-in-to-run-jobs).
 
 Add this new Kubernetes Container template and specify this as the node when running builds.
-```
+```shell
 npm install
 npm run build
 ```
