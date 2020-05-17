@@ -1,0 +1,11 @@
+namespace: opl-dev
+commonLabels:
+  org: OpenPracticeLibrary
+  variant: dev
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+images:
+- name: quay.io/openpracticelibrary/opl-content-api
+  newTag: v0.1.0-dev
