@@ -1,4 +1,4 @@
-app_name: "opl-cms"
+app_name: "opl-content-api"
 namespace: "argo-cd"
 dev_namespace: "opl-dev"
 

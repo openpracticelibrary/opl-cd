@@ -14,13 +14,13 @@ spec:
     server: {{ .server | default "https://kubernetes.default.svc" }}
   project: {{ .project | default "default" }}
   source:
-    helm:
-      releaseName: {{ .releasename | default $.Values.app_name }}
-      valueFiles: 
-      - {{ .valueFile }}
-    path: {{ .path }} 
     repoURL: {{ .repoUrl }}
     targetRevision: {{ .targetRevision | default "master" }}
+    path: {{ .path }}
+    helm:
+      releaseName: {{ .releasename | default $.Values.app_name }}
+      valueFiles:
+      - {{ .valueFile }}
 {{- end }}
 {{- end }}
 
