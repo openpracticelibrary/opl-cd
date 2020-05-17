@@ -1,0 +1,33 @@
+app_name: "opl-content-api"
+namespace: "opl-dev"
+cicd_namespace: "opl-ci-cd"
+
+services:
+  - ports:
+      - name: http
+        protocol: TCP
+        port: 1337
+        targetPort: 1337
+    type: ClusterIP
+
+route:
+  port:
+    targetPort: 1337
+  to:
+    kind: Service
+    name: opl-cms
+    weight: 100
+
+deployment:
+  replicas: 1
+  image_name: quay.io/openpracticelibrary/opl-content-api
+  image_tag: "v0.1.0-dev"
+  env_vars:
+    - name: "NODE_ENV"
+      value: "production"
+    - name: "DATABASE_HOST"
+      value: "opl-mongodb"
+  ports:
+    - containerPort: 1337
+      name: http
+      protocol: TCP

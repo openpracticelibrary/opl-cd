@@ -1,0 +1,50 @@
+{{- if .Values.deployment }}
+{{ $appname := .Values.app_name }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $appname}}
+  namespace: {{ .Values.deployment.namespace | default .Values.namespace | quote }}
+  labels:
+    app: {{ $appname }}
+    chart: {{ template "opl-content-api.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+{{- with $deploy := .Values.deployment }}
+spec:
+  replicas: {{ $deploy.replicas | default "1" }}
+  selector:
+    matchLabels:
+      app: "{{ $appname }}"
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: "{{ $appname }}"
+      name: "{{ $appname }}"
+    spec:
+      containers:
+      - env:
+{{ toYaml $deploy.env_vars | indent 8 }}
+        image: "{{ $deploy.image_name }}:{{ $deploy.image_tag }}"
+        imagePullPolicy: Always
+        name: "{{ $appname }}"
+        ports:
+{{- range $ports := $deploy.ports }}
+          - name: {{ $ports.name }}
+            containerPort: {{ $ports.containerPort }}
+            protocol: {{ $ports.protocol }}
+{{- end }}
+{{- if $deploy.volume_mounts }}
+        volumeMounts:
+{{ toYaml $deploy.volume_mounts | indent 8 }}
+{{- end }}
+{{- if $deploy.volumes }}
+      volumes:
+{{ toYaml $deploy.volumes | indent 6 }}
+{{- end }}
+      terminationGracePeriodSeconds: 60
+{{- end }}
+{{- end }}

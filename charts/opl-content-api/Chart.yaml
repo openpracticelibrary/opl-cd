@@ -1,0 +1,12 @@
+apiVersion: v1
+name: opl-content-api
+type: application
+version: 0.1.6
+appVersion: 0.1.6
+description: Headless CMS for Open Practice Library, part of Apollo Federation services for OPL
+sources:
+ - https://github.com/openpracticelibrary/opl-content-api.git
+maintainers:
+  - name: Shahein Moussavi
+    email: shahein@redhat.com
+

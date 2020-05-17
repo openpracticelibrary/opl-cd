@@ -1,0 +1,12 @@
+app_name: "opl-cms"
+namespace: "argo-cd"
+dev_namespace: "opl-dev"
+
+argodeploys:
+  - env: dev
+    project: opl
+    repoUrl: https://github.com/openpracticelibrary/opl-ci-cd.git
+    path: "charts/opl-content-api"
+    namespace: opl-dev
+    targetRevision: dev
+    valueFile: dev-values.yaml
