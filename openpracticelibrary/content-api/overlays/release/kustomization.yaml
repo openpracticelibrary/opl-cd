@@ -1,6 +1,5 @@
 namespace: openpracticelibrary
 commonLabels:
-  org: OpenPracticeLibrary
   variant: prod
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization

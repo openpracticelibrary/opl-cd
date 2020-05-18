@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: opl-api-gateway-route
+spec:
+  host: ''
+  port:
+    targetPort: 1337
+  to:
+    kind: Service
+    name: opl-api-gateway-svc
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: []
+

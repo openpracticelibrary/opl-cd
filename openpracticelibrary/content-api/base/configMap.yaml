@@ -3,3 +3,5 @@ kind: ConfigMap
 metadata:
   name: opl-content-api-cm
 data:
+  nodeEnv: "production"
+  dbHost: "opl-mongo"
