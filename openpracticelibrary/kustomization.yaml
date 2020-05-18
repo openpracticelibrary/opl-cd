@@ -1,4 +1,4 @@
 resources:
 - content-api/
 - api-gateway/
-
+- frontend/

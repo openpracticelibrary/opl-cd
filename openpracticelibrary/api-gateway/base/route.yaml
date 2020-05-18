@@ -1,7 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: opl-api-gateway-route
+  name: opl-api-gateway
 spec:
   host: ''
   port:

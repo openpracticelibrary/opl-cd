@@ -1,14 +1,14 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: opl-content-api
+  name: openpracticelibrary
 spec:
   host: ''
   port:
-    targetPort: 1337
+    targetPort: 8080
   to:
     kind: Service
-    name: opl-content-api-svc
+    name: openpracticelibrary-svc
     weight: 100
   wildcardPolicy: None
 status:

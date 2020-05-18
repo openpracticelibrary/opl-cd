@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openpracticelibrary-cm
+data:
+  httpd-conf: |
+    <LocationMatch "/graphql">
+    ProxyPass http://opl-api-gateway:4000/graphql
+    </LocationMatch>
+
+    FallbackResource /
