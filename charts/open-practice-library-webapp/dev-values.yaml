@@ -1,0 +1,66 @@
+app_name: &app_name "opl-fe"
+dev_namespace: &dev_namespace "opl-dev"
+cicd_namespace: &cicd_namespace "opl-ci-cd"
+dev_cms_host: &dev_cms_host "http://opl-cms-opl-dev.apps.s43.core.rht-labs.com"
+test_cms_host: &test_cms_host ""
+
+imagestreams:
+  enabled: true
+  cicd: true
+  namespace: opl-ci-cd
+
+services:
+  - ports:
+      - name: http
+        protocol: TCP
+        port: 8080
+        targetPort: 8080
+    type: ClusterIP
+
+builds:
+  created_image_tag: "0.1.0"
+  trigger_type: "GitLab"
+  source_repo: "https://gitlab.com/rht-opl/opl-fe.git"
+  source_repo_ref: "master"
+  builder_image_name: "httpd"
+  builder_image_tag: "latest"
+  secret_name: "gitlab-webhook"
+  context_dir: "dist"
+  env_vars:
+    app_name: *app_name
+    namespace: *cicd_namespace
+    dev: *dev_namespace
+    cms_host_dev: *dev_cms_host
+    cms_host_test: *test_cms_host
+
+route:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: opl-fe
+    weight: 100
+
+configmap:
+  - name: httpd-config
+    config_data:
+      httpd-conf: |
+        FallbackResource /
+
+deployment:
+    image_name: "image-registry.openshift-image-registry.svc:5000/opl-dev/opl-fe"
+    replicas: 1
+    ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+    volume_mounts:
+    - mountPath: "/opt/app-root/etc/httpd.d"
+      name: httpd-conf
+    volumes:
+    - name: httpd-conf
+      configMap:
+        name: httpd-config
+        items:
+          - key: httpd-conf
+            path: "httpd.conf"
