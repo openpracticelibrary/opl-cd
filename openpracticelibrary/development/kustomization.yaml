@@ -1,6 +1,0 @@
-resources:
-- ../content-api/overlays/development/
-- ../media-service/overlays/development/
-- ../api-gateway/overlays/development/
-- ../frontend/overlays/development/
-

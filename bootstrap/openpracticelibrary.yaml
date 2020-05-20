@@ -3,19 +3,16 @@ kind: Application
 metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  name: opl-content-api-dev
-  namespace: argo-cd
 spec:
   destination:
-    namespace: opl-dev
+    namespace: argo-cd
     server: https://kubernetes.default.svc
   project: opl
   source:
-    repoURL: https://github.com/openpracticelibrary/opl-ci-cd.git
-    targetRevision: dev
-    path: charts/opl-content-api
-    helm:
-      releaseName: opl-content-api
-      valueFiles:
-      - dev-values.yaml
-
+    repoURL: https://github.com/openpracticelibrary/opl-cd.git
+    targetRevision: master
+    path: "openpracticelibrary/envs/development/"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
