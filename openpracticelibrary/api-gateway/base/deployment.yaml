@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opl-api-gateway-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opl-api-gateway
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: opl-api-gateway
+    spec:
+      containers:
+      - name: opl-api-gateway-container
+        image: quay.io/openpracticelibrary/opl-api-gateway:foo
+        env:
+        - name: "CONTENT_API_ENDPOINT"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-api-gateway-cm
+              key: contentApiEndpoint
+        - name: "MEDIA_API_ENDPOINT"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-api-gateway-cm
+              key: mediaApiEndpoint
+        - name: "VERSIONING_API_ENDPOINT"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-api-gateway-cm
+              key: versionApiEndpoint
+        ports:
+        - containerPort: 4000
+          name: http
+          protocol: TCP
+      terminationGracePeriodSeconds: 60

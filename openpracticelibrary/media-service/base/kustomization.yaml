@@ -1,0 +1,6 @@
+commonLabels:
+  app: opl-media-service
+
+resources:
+- deployment.yaml
+- service.yaml

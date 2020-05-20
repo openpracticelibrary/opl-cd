@@ -1,0 +1,9 @@
+commonLabels:
+  app: opl-content-api
+
+resources:
+- deployment.yaml
+- service.yaml
+- route.yaml
+- configMap.yaml
+

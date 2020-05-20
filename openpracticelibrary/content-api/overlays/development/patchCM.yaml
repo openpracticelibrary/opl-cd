@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opl-content-api-cm
+data:
+  dbHost: "opl-mongo-mongodb"
+

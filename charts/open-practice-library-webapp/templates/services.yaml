@@ -1,0 +1,32 @@
+{{- if .Values.services }}
+{{ $appname := .Values.app_name }}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ $appname }}
+  namespace: {{ .Values.dev_namespace | quote }}
+  labels:
+    app: {{ $appname }}
+    chart: {{ template "opl-fe.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+{{- range $svc := .Values.services }}
+spec:
+  ports:
+{{- range $port := $svc.ports }}
+  - name: {{ $port.name }}
+    protocol: {{ $port.protocol | default "TCP" | quote }}
+    port: {{ $port.port }}
+    targetPort: {{ $port.targetPort }}
+    nodePort: 0
+{{- end }}
+  selector:
+    app: {{ $appname }}
+  type: {{ $svc.type }}
+  sessionAffinity: None
+status:
+  loadBalancer: {}
+{{- end }}
+{{- end }}
+

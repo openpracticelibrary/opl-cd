@@ -1,0 +1,7 @@
+commonLabels:
+  org: OpenPracticeLibrary
+
+resources:
+- overlays/development
+- overlays/prerelease
+- overlays/release

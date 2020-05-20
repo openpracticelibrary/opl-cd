@@ -1,0 +1,13 @@
+{{- if .Values.imagestreams.cicd }}
+{{- with .Values.imagestreams }}
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: "{{ $.Values.app_name }}"
+  namespace: {{ .namespace | default $.Values.cicd_namespace | quote }}
+spec: {}
+{{- end }}
+{{- end }}
+
+

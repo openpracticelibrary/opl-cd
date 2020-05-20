@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: opl-content-api-svc
+spec:
+  ports:
+  - name: http
+    protocol: "TCP"
+    port: 1337
+    targetPort: 1337
+    nodePort: 0
+  selector:
+    app: opl-content-api
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}
+
+

@@ -1,0 +1,15 @@
+apiVersion: v1
+name: open-practice-library-webapp
+description: A helm chart for the Open Practice Library webapp on Openshift.
+type: application
+version: 0.1.1
+appVersion: 0.1.1
+description: Vue Web App for Open Practice Library v2, designed for front-end enablement
+sources:
+ - https://gitlab.com/rht-opl/opl-fe.git
+maintainers:
+  - name: Shahein Moussavi
+    email: shahein@redhat.com
+  - name: Phillip Double
+    email: p-dub@redhat.com
+

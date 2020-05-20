@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: opl-api-gateway-svc
+spec:
+  ports:
+  - name: http
+    protocol: "TCP"
+    port: 4000
+    targetPort: 4000
+    nodePort: 0
+  selector:
+    app: opl-api-gateway
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}
+
+

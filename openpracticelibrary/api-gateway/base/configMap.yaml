@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opl-api-gateway-cm
+data:
+  contentApiEndpoint: "opl-content-api-svc"
+  mediaApiEndpoint: "opl-media-service-svc"
+  versionApiEndpoint: ""

@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: openpracticelibrary
+spec:
+  host: ''
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: openpracticelibrary-svc
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: []
+

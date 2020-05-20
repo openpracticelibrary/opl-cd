@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opl-content-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opl-content-api
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: opl-content-api
+    spec:
+      containers:
+      - name: opl-content-api-container
+        image: quay.io/openpracticelibrary/opl-content-api:v0.1.0
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: "NODE_ENV"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-content-api-cm
+              key: nodeEnv
+        - name: "DATABASE_HOST"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-content-api-cm
+              key: dbHost
+        ports:
+        - containerPort: 1337
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /.well-known/apollo/server-health
+            port: 1337
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      terminationGracePeriodSeconds: 60

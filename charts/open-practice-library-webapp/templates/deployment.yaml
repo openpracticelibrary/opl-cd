@@ -1,0 +1,54 @@
+{{- if .Values.deployment }}
+{{ $imagetag := .Values.builds.created_image_tag }}
+{{ $appname := .Values.app_name }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $appname}}
+  namespace: {{ .Values.deployment.namespace | default .Values.dev_namespace | quote }}
+  labels:
+    app: {{ $appname }}
+    chart: {{ template "opl-fe.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+{{- with $dc := .Values.deployment }}
+spec:
+  replicas: {{ $dc.replicas | default "1" }}
+  selector:
+    matchLabels:
+      app: "{{ $appname }}"
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: "{{ $appname }}"
+      name: "{{ $appname }}"
+    spec:
+      containers:
+{{- if $dc.env_vars }}
+      - env:
+{{ toYaml $dc.env_vars | indent 8 }}
+{{- end }}
+      - image: "{{ $dc.image_name | default $appname }}:{{ $imagetag }}"
+        imagePullPolicy: Always
+        name: "{{ $appname }}"
+        ports:
+{{- range $ports := $dc.ports }}
+          - name: {{ $ports.name }}
+            containerPort: {{ $ports.containerPort }}
+            protocol: {{ $ports.protocol }}
+{{- end }}
+{{- if $dc.volume_mounts }}
+        volumeMounts:
+{{ toYaml $dc.volume_mounts | indent 8 }}
+{{- end }}
+{{- if $dc.volumes }}
+      volumes:
+{{ toYaml $dc.volumes | indent 6 }}
+{{- end }}
+      terminationGracePeriodSeconds: 60
+{{- end }}
+{{- end }}
+

@@ -1,0 +1,10 @@
+namespace: openpracticelibrary
+commonLabels:
+  variant: prod
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+images:
+- name: quay.io/openpracticelibrary/opl-content-api
+  newTag: v0.1.0
