@@ -17,6 +17,13 @@ spec:
       containers:
       - name: opl-content-api-container
         image: quay.io/openpracticelibrary/opl-content-api:v0.1.0
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
         env:
         - name: "NODE_ENV"
           valueFrom:

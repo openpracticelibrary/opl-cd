@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: opl-media-service-svc
+spec:
+  ports:
+  - name: http
+    protocol: "TCP"
+    port: 4002
+    targetPort: 4002
+    nodePort: 0
+  selector:
+    app: opl-media-service
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

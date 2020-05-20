@@ -4,5 +4,5 @@ metadata:
   name: opl-api-gateway-cm
 data:
   contentApiEndpoint: "opl-content-api-svc"
-  mediaApiEndpoint: ""
+  mediaApiEndpoint: "opl-media-service-svc"
   versionApiEndpoint: ""

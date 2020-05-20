@@ -5,7 +5,10 @@ metadata:
 data:
   httpd-conf: |
     <LocationMatch "/graphql">
-    ProxyPass http://opl-api-gateway:4000/graphql
+      ProxyPass http://opl-api-gateway-svc:4000/graphql
+    </LocationMatch>
+    <LocationMatch "/image-upload">
+      ProxyPass http://opl-media-service-svc:4002/graphql
     </LocationMatch>
 
     FallbackResource /

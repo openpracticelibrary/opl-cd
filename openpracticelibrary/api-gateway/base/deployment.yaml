@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: opl-api-gateway-container
-        image: quay.io/openpracticelibrary/opl-api-gateway:v0.1.0
+        image: quay.io/openpracticelibrary/opl-api-gateway:foo
         env:
         - name: "CONTENT_API_ENDPOINT"
           valueFrom:

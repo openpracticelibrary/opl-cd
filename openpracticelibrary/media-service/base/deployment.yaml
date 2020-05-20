@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opl-media-service-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opl-media-service
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: opl-media-service
+    spec:
+      containers:
+      - name: opl-media-service-container
+        image: quay.io/openpracticelibrary/opl-media-service:foo
+        env:
+        - name: "GITHUB_PAT"
+          valueFrom:
+            secretKeyRef:
+              name: opl-media-service-secrets
+              key: githubPat
+        ports:
+        - containerPort: 4002
+          name: http
+          protocol: TCP
+      terminationGracePeriodSeconds: 60

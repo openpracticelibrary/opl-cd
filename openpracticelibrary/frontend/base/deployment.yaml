@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: openpracticelibrary-container
-      - image: quay.io/openpracticelibrary/opl-fe:foo
+        image: quay.io/openpracticelibrary/opl-fe:httpd
         imagePullPolicy: Always
         ports:
         - name: http
@@ -34,7 +34,7 @@ spec:
       volumes:
       - name: httpd-conf
         configMap:
-          name: httpd-config
+          name: openpracticelibrary-cm
           items:
           - key: httpd-conf
             path: "httpd.conf"
