@@ -7,4 +7,4 @@ resources:
 - ../../base
 images:
 - name: quay.io/openpracticelibrary/opl-api-gateway
-  newTag: f9d55cbae8937fc3e2abedea058855f32ec0e0af
+  newTag: 6af0b287cac196410222a6083661d13b4f7e7862
