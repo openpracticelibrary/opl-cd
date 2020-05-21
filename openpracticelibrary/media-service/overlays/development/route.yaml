@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: opl-media-service
+spec:
+  host: ''
+  port:
+    targetPort: 4002
+  to:
+    kind: Service
+    name: opl-media-service-svc
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: []
+

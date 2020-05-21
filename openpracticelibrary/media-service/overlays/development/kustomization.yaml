@@ -5,6 +5,7 @@ commonLabels:
   variant: dev
 resources:
 - ../../base
+- route.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-media-service
   newTag: d5010a87879fd7f9ed0f43c398dc17fb28fa224d
