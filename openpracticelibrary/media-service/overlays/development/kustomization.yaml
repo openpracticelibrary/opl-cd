@@ -7,4 +7,4 @@ resources:
 - ../../base
 images:
 - name: quay.io/openpracticelibrary/opl-media-service
-  newTag: a40124d71e50a39cdbb7c0f9b3c72adbda05fae1
+  newTag: d5010a87879fd7f9ed0f43c398dc17fb28fa224d
