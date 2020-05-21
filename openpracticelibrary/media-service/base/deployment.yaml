@@ -27,4 +27,10 @@ spec:
         - containerPort: 4002
           name: http
           protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /.well-known/apollo/server-health
+            port: 1337
+          initialDelaySeconds: 5
+          periodSeconds: 5
       terminationGracePeriodSeconds: 60
