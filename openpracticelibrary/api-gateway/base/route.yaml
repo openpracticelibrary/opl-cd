@@ -5,7 +5,7 @@ metadata:
 spec:
   host: ''
   port:
-    targetPort: 1337
+    targetPort: 4000
   to:
     kind: Service
     name: opl-api-gateway-svc
