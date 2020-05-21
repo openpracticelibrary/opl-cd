@@ -1,6 +1,7 @@
 # Open Practice Library Manifests
 
 ![Content API Dev Build](https://github.com/openpracticelibrary/opl-content-api/workflows/Content%20API%20Dev%20Build/badge.svg)
+![Media Svc Dev Build](https://github.com/openpracticelibrary/opl-media-service/workflows/Media%20Svc%20Dev%20Build/badge.svg)
 
 ![FE Dev Build](https://github.com/openpracticelibrary/opl-fe/workflows/FE%20Dev%20Build/badge.svg)
 
