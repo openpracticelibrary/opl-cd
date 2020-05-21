@@ -2,6 +2,8 @@
 
 ![Content API Dev Build](https://github.com/openpracticelibrary/opl-content-api/workflows/Content%20API%20Dev%20Build/badge.svg)
 
+![FE Dev Build](https://github.com/openpracticelibrary/opl-fe/workflows/FE%20Dev%20Build/badge.svg)
+
 This repo contains the kustomize manifests to manage the deployment lifecycle of Open Practice Library and all related services across multiple versions and environments. Manifest changes are automatically triggered to release versions of the Open Practice Library via GitHub Actions in the various code repos. It is watched by ArgoCD, automatically updating apps running in Openshift with any manifest changes.
 
 ## Bootstrap
