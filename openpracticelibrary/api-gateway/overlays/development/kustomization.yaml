@@ -5,3 +5,6 @@ commonLabels:
   variant: dev
 resources:
 - ../../base
+images:
+- name: quay.io/openpracticelibrary/opl-api-gateway
+  newTag: f9d55cbae8937fc3e2abedea058855f32ec0e0af
