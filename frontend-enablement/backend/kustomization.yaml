@@ -6,4 +6,5 @@ resources:
 - ../../openpracticelibrary/api-gateway/overlays/development/
 - ../../openpracticelibrary/media-service/overlays/development/
 - ../../openpracticelibrary/content-api/overlays/development/
-
+patchesStrategicMerge:
+- patchCM.yaml
