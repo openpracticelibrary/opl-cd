@@ -1,0 +1,9 @@
+namespace: fe-enablement-dev
+commonLabels:
+  variant: dev
+  relation: fe-enablement
+resources:
+- ../../openpracticelibrary/api-gateway/overlays/development/
+- ../../openpracticelibrary/media-service/overlays/development/
+- ../../openpracticelibrary/content-api/overlays/development/
+

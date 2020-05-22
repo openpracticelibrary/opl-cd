@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: frontend-enablement
+spec:
+  destination:
+    namespace: labs-ci-cd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/openpracticelibrary/opl-cd.git
+    targetRevision: master
+    path: "frontend-enablement/backend"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
