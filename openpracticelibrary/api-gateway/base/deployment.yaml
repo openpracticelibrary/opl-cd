@@ -38,9 +38,11 @@ spec:
           name: http
           protocol: TCP
         livenessProbe:
-          httpGet:
-            path: /.well-known/apollo/server-health
-            port: 4000
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - /app/liveness.sh
           initialDelaySeconds: 5
           periodSeconds: 5
       terminationGracePeriodSeconds: 60
