@@ -1,0 +1,9 @@
+resources:
+- ../../content-api/overlays/development/
+- ../../media-service/overlays/development/
+- ../../api-gateway/overlays/development/
+- ../../frontend/overlays/development/
+- ../../content-api/overlays/prerelease/
+- ../../media-service/overlays/prerelease/
+- ../../api-gateway/overlays/prerelease/
+- ../../frontend/overlays/prerelease/

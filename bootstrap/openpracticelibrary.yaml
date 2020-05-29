@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/openpracticelibrary/opl-cd.git
     targetRevision: master
-    path: "openpracticelibrary/envs/development/"
+    path: "openpracticelibrary/envs/dev-and-staging/"
   syncPolicy:
     automated:
       prune: true

@@ -5,3 +5,6 @@ commonLabels:
   variant: staging
 resources:
 - ../../base
+images:
+- name: quay.io/openpracticelibrary/opl-api-gateway
+  newTag: latest
