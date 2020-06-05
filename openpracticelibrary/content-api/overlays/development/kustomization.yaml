@@ -9,4 +9,4 @@ patchesStrategicMerge:
 - patchCM.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-content-api
-  newTag: 4311f3c43610ced18dcbbf90fd24e72af6a317b4
+  newTag: 1d043afb34b8af5fa875a71f3612e4c38919eaf4
