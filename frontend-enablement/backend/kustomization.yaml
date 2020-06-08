@@ -8,3 +8,4 @@ resources:
 - ../../openpracticelibrary/content-api/overlays/development/
 patchesStrategicMerge:
 - patchCM.yaml
+- patchMediaServiceCM.yaml

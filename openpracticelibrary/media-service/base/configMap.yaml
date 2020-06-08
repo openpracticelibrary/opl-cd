@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opl-media-service-cm
+data:
+  githubOrg: "openpracticelibrary"
+  githubRepo: "opl-media"
+  githubPagesUrl: "https://openpracticelibrary.github.io/opl-media/images"

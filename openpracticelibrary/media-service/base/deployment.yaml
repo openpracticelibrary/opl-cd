@@ -23,6 +23,16 @@ spec:
             secretKeyRef:
               name: opl-media-service-secrets
               key: githubPat
+        - name: "GITHUB_ORG"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-media-service-cm
+              key: githubOrg
+        - name: "GITHUB_REPO"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-media-service-cm
+              key: githubRepo
         ports:
         - containerPort: 4002
           name: http
