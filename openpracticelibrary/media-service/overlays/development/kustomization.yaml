@@ -8,4 +8,4 @@ resources:
 - route.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-media-service
-  newTag: a6a257a42f5aa4d46fc379ffe8576d58b2a83cb1
+  newTag: 4dc5013ae46c0c6a3887c1d2e9d72ba5e9f38d6d
