@@ -7,4 +7,4 @@ resources:
 - ../../base
 images:
 - name: quay.io/openpracticelibrary/opl-fe
-  newTag: c2bae3e6065420c68a31feec773052fc671d04a1
+  newTag: bee6193769e3a3de63269a4ea0cab861b354fab2
