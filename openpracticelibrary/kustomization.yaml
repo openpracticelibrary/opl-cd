@@ -3,4 +3,5 @@ resources:
 - media-service/
 - api-gateway/
 - frontend/
-- pre-sync-job.yaml
+- hello-world-task.yaml
+- post-sync-job.yaml
