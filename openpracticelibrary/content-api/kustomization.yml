@@ -4,4 +4,3 @@ commonLabels:
 resources:
 - overlays/development
 - overlays/prerelease
-- overlays/release
