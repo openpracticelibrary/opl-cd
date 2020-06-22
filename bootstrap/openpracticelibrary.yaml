@@ -6,13 +6,13 @@ metadata:
   name: open-practice-library
 spec:
   destination:
-    namespace: labs-ci-cd
+    namespace: opl-cd
     server: https://kubernetes.default.svc
   project: default
   source:
     repoURL: https://github.com/openpracticelibrary/opl-cd.git
     targetRevision: master
-    path: "openpracticelibrary/envs/staging/"
+    path: "openpracticelibrary/envs/development/"
   syncPolicy:
     automated:
       prune: true
