@@ -3,3 +3,4 @@ resources:
 - media-service/
 - api-gateway/
 - frontend/
+- pre-sync-job.yaml
