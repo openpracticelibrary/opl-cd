@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: opl-api-gateway
+spec:
+  host: 'opl-api-gateway-opl-dev.apps.s44.core.rht-labs.com'

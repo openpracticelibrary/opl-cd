@@ -5,6 +5,8 @@ commonLabels:
   variant: dev
 resources:
 - ../../base
+patchesStrategicMerge:
+- patchRoute.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-fe
   newTag: bee6193769e3a3de63269a4ea0cab861b354fab2

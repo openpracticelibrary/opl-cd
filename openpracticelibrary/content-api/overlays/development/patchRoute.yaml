@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: opl-content-api
+spec:
+  host: 'opl-content-api-opl-dev.apps.s44.core.rht-labs.com'

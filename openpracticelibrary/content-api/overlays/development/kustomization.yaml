@@ -7,6 +7,7 @@ resources:
 - ../../base
 patchesStrategicMerge:
 - patchCM.yaml
+- patchRoute.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-content-api
   newTag: 7555d70117a0d737d8f77cece3c3e7ba36197c5e

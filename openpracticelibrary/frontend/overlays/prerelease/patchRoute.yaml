@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: openpracticelibrary
+spec:
+  host: 'openpracticelibrary-opl-staging.apps.s44.core.rht-labs.com'

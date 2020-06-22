@@ -5,6 +5,8 @@ commonLabels:
   variant: dev
 resources:
 - ../../base
+patchesStrategicMerge:
+- ./patchRoute.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-api-gateway
   newTag: 173b9528f585f6f5c6bfa7a4561d4971d46ea87c

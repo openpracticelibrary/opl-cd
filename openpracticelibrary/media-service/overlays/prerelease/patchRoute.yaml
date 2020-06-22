@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: opl-media-service
+spec:
+  host: 'opl-media-service-opl-staging.apps.s44.core.rht-labs.com'
