@@ -3,5 +3,4 @@ resources:
 - media-service/
 - api-gateway/
 - frontend/
-- hello-world-task.yaml
-- post-sync-job.yaml
+- tekton/

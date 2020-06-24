@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cypress-task
+spec:
+  resources:
+    inputs:
+      - name: repo
+        type: git
+  steps:
+    - name: install
+      image: quay.io/openpracticelibrary/cypress-image:base
+      workingDir: /workspace/repo
+      command:
+        - npm
+      args:
+        - "install"
+    - name: test
+      image: quay.io/openpracticelibrary/cypress-image:base
+      workingDir: /workspace/repo
+      command: ["npm"]
+      args: ["run", "e2e:local"]

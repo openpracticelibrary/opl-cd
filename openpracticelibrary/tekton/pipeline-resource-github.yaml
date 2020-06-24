@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: github-resource
+spec:
+  type: git
+  params:
+    - name: revision
+      value: cypress-testing
+    - name: url
+      value: git@github.com:openpracticelibrary/opl-fe.git
