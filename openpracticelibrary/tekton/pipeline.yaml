@@ -1,0 +1,30 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: cypress-pipeline
+spec:
+  resources:
+    - name: my-repo
+      type: git
+  tasks:
+    - name: cypress-tests
+      taskRef:
+        name: cypress-task
+      resources:
+        inputs:
+          - name: repo
+            resource: my-repo
+    - name: deploy-to-staging
+      taskRef:
+        name: github-tag-task
+      resources:
+        inputs:
+          - name: repo
+            resource: my-repo
+      runAfter:
+        - cypress-tests
+  # - name: send-slack-results
+  #   taskRef:
+  #     name: npm-binary-build
+  #   runAfter:
+  #     - cypress-task

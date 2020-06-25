@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: github-tag-task
+spec:
+  resources:
+    inputs:
+      - name: repo
+        type: git
+  steps:
+    - name: github-tag
+      image: quay.io/openpracticelibrary/toolbox:latest
+      workingDir: /workspace/repo
+      script: |
+        #!/usr/bin/env bash
+        SHA=$(git rev-parse --short HEAD)
+        echo $SHA
+        git tag $SHA
