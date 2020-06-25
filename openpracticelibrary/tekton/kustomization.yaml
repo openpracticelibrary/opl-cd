@@ -5,4 +5,6 @@ resources:
 - serviceaccount.yaml
 - pipeline-resource-github.yaml
 - cypress-task.yaml
-- cypress-taskrun.yaml
+- github-tag-task.yaml
+- pipeline.yaml
+- pipeline-run.yaml

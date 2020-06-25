@@ -1,16 +1,15 @@
 apiVersion: tekton.dev/v1beta1
-kind: TaskRun
+kind: PipelineRun
 metadata:
-  name: cypress-taskrun
+  name: cypress-pipeline-run
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   serviceAccountName: tekton-service-account
-  taskRef:
-    name: cypress-task
   resources:
-    inputs:
-      - name: repo
-        resourceRef:
-          name: github-resource
+    - name: my-repo
+      resourceRef:
+        name: github-resource
+  pipelineRef:
+    name: cypress-pipeline
