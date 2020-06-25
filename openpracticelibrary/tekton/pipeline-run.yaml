@@ -4,7 +4,6 @@ metadata:
   name: cypress-pipeline-run
   annotations:
     argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   serviceAccountName: tekton-service-account
   resources:
