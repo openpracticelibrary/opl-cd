@@ -18,5 +18,5 @@ spec:
     - name: test
       image: quay.io/openpracticelibrary/cypress-image:base
       workingDir: /workspace/repo
-      command: ["npm run"]
-      args: ["e2e:local", "--env HOST=http://openpracticelibrary-opl-dev.apps.s44.core.rht-labs.com/"]
+      command: ["npm", "run", "e2e:local"]
+      args: ["--env", "HOST=http://openpracticelibrary-opl-dev.apps.s44.core.rht-labs.com/"]
