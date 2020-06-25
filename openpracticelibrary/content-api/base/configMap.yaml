@@ -5,3 +5,5 @@ metadata:
 data:
   nodeEnv: "production"
   dbHost: "opl-mongo"
+  oplContentApiBaseUrl: "http://opl-content-api-opl-dev.apps.s44.core.rht-labs.com"
+  amaDestEmail: "openpracticelibraryteam@gmail.com"
