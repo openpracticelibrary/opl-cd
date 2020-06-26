@@ -27,6 +27,7 @@ deployment:
       value: "production"
     - name: "DATABASE_HOST"
       value: "opl-mongodb"
+
   ports:
     - containerPort: 1337
       name: http
