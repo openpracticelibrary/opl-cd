@@ -4,4 +4,6 @@ metadata:
   name: opl-content-api-cm
 data:
   dbHost: "opl-mongo-mongodb"
+  oplContentApiBaseUrl: "http://opl-content-api-opl-dev.apps.s44.core.rht-labs.com"
+  amaDestEmail: "openpracticelibraryteam@gmail.com"
 

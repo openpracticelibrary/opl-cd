@@ -35,6 +35,21 @@ spec:
             configMapKeyRef:
               name: opl-content-api-cm
               key: dbHost
+        - name: "OPL_CONTENT_API_BASE_URL"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-content-api-cm
+              key: oplContentApiBaseUrl
+        - name: "AMA_DEST_EMAIL"
+          valueFrom:
+            configMapKeyRef:
+              name: opl-content-api-cm
+              key: amaDestEmail
+        - name: "SENDGRID_API_KEY"
+          valueFrom:
+            secretKeyRef:
+              name: opl-content-api-secrets
+              key: sendgridApiKey
         ports:
         - containerPort: 1337
           name: http
