@@ -11,6 +11,12 @@ spec:
     - name: github-tag
       image: quay.io/openpracticelibrary/toolbox:latest
       workingDir: /workspace/repo
+      env:
+      - name: GITHUB_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: github-token
+            key: token
       script: |
         #!/usr/bin/env bash
-        sleep 1000
+        echo $GITHUB_TOKEN
