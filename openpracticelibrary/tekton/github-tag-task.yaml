@@ -15,4 +15,4 @@ spec:
         #!/usr/bin/env bash
         SHA=$(git rev-parse --short HEAD)
         echo $SHA
-        git tag $SHA
+        sleep 1000
