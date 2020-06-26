@@ -27,10 +27,7 @@ deployment:
       value: "production"
     - name: "DATABASE_HOST"
       value: "opl-mongodb"
-    - name: "OPL_CONTENT_API_BASE_URL"
-      value: "http://opl-content-api-opl-dev.apps.s44.core.rht-labs.com"
-    - name: "AMA_DEST_EMAIL"
-      value: "openpracticelibraryteam@gmail.com"
+
   ports:
     - containerPort: 1337
       name: http
