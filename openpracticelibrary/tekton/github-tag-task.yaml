@@ -13,9 +13,4 @@ spec:
       workingDir: /workspace/repo
       script: |
         #!/usr/bin/env bash
-        git config --global user.email "shahein@redhat.com"
-        git config --global user.name "GitHub Actions"
-        SHA=$(git rev-parse --short HEAD)
-        echo $SHA
-        git tag $SHA
-        git push origin --tags
+        sleep 1000
