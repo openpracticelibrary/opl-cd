@@ -19,4 +19,4 @@ spec:
             key: token
       script: |
         #!/usr/bin/env bash
-        echo $GITHUB_TOKEN
+        sleep 1000
