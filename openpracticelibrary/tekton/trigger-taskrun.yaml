@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: trigger-staging-deploy-taskrun
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  taskRef:
+    name: trigger-staging-deploy

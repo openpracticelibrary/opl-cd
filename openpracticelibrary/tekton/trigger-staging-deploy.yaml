@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: trigger-staging-deploy
+spec:
+  steps:
+    - name: send-github-event
+      image: quay.io/openpracticelibrary/toolbox:latest
+      workingDir: /workspace/repo
+      env:
+      - name: GITHUB_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: github-token
+            key: token
+      script: |
+        #!/usr/bin/env bash
+        curl -X POST \
+          https://api.github.com/repos/openpracticelibrary/opl-fe/dispatches \
+          -H 'Authorization: Bearer '"$GITHUB_TOKEN"'' \
+          -H 'Content-Type: application/json' \
+          -d '{
+          "event_type": "synced",
+          "client_payload": {
+            "unit": false,
+            "integration": true
+          }
+        }'

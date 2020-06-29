@@ -2,9 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: opl-dev
 resources:
-- serviceaccount.yaml
-- pipeline-resource-github.yaml
-- cypress-task.yaml
-- github-tag-task.yaml
-- pipeline.yaml
-- pipeline-run.yaml
+- trigger-staging-deploy.yaml
+- trigger-taskrun.yaml
