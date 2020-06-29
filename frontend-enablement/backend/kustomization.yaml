@@ -5,8 +5,7 @@ commonLabels:
 resources:
 - ../../openpracticelibrary/api-gateway/overlays/development/
 - ../../openpracticelibrary/media-service/overlays/development/
-- ../../openpracticelibrary/content-api/overlays/development/
+- ./content-api/
 patchesStrategicMerge:
-- patchCM.yaml
 - patchMediaServiceCM.yaml
 - patchRoutes.yaml
