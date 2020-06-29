@@ -6,7 +6,7 @@ metadata:
   name: frontend-enablement
 spec:
   destination:
-    namespace: labs-ci-cd
+    namespace: opl-cd
     server: https://kubernetes.default.svc
   project: default
   source:
