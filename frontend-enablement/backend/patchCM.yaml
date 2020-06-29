@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: opl-content-api-cm
 data:
-  dbHost: "fee-mongo-mongodb"
+  dbHost: "fe-mongo-mongodb"
