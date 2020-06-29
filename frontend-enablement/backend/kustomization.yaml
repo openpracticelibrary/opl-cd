@@ -9,3 +9,4 @@ resources:
 patchesStrategicMerge:
 - patchCM.yaml
 - patchMediaServiceCM.yaml
+- patchRoutes.yaml
