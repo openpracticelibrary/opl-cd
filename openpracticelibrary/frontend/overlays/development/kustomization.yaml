@@ -9,4 +9,4 @@ patchesStrategicMerge:
 - patchRoute.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-fe
-  newTag: 53ab68d4607a4ee93425cf217685a7ef537f3e87
+  newTag: 3d23b4e7738bee1a8ed72b56754ee5dd31ef4263
