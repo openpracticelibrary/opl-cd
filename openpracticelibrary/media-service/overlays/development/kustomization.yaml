@@ -9,4 +9,4 @@ patchesStrategicMerge:
 - patchRoute.yaml
 images:
 - name: quay.io/openpracticelibrary/opl-media-service
-  newTag: f8645f74484d168f64e9f203571d788735b5433d
+  newTag: 43cab196c8b7a7ebdc1359dd62ec3d665f98a6fe
